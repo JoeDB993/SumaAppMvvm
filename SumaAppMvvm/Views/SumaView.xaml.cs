@@ -11,4 +11,14 @@ public partial class SumaView : ContentPage
 		ViewModel = new SumaViewModel();
 		BindingContext = ViewModel;
 	}
+    private void OnEntryFocused(object sender, FocusEventArgs e)
+    {
+        if (sender is Entry entry)
+        {
+            if (string.IsNullOrEmpty(entry.Text) || entry.Text == "0")
+            {
+                entry.Text = string.Empty;
+            }
+        }
+    }
 }
