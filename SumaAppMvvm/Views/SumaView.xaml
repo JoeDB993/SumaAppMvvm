@@ -2,11 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SumaAppMvvm.Views.SumaView"
-             Title="SumaView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             xmlns:viewModel="clr-namespace:SumaAppMvvm.ViewModels"
+             Title="Suma">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Ingrese el valor de a" />
+        <Entry Text="{Binding A, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Valor de a" />
+
+        <Label Text="Ingrese el valor de b" />
+        <Entry Text="{Binding B, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Valor de b" />
+
+        <Button Text="Calcular" Command="{Binding CalcularCommand}" />
+        <Button Text="Limpiar" Command="{Binding LimpiarCommand}" />
+
+        <Label Text="{Binding Result}" FontSize="24" TextColor="Black" />
     </VerticalStackLayout>
 </ContentPage>

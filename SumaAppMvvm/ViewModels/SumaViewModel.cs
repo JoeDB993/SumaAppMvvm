@@ -10,28 +10,34 @@ namespace SumaAppMvvm.ViewModels
 
         [ObservableProperty]
         private double b;
-        
 
+        [ObservableProperty]
         private double result;
 
-        private void Alerta(string Título, string Mensaje)
+        private void Alerta(string titulo, string mensaje)
         {
-            MainThread.BeginInvokeOnMainThread(async () => await App.Current!.MainPage!.DisplayAlert(Título, Mensaje, "Aceptar"));
+            App.Current!.MainPage!.DisplayAlert(titulo, mensaje, "Aceptar");
         }
+
         [RelayCommand]
-        private void calcular()
+        private void Calcular()
         {
             if (A == 0 || B == 0)
             {
                 Alerta("Advertencia", "Valor de A o B no puede ser cero.");
             }
-            else 
+            else
             {
-                result = a + b;
-
+                Result = A + B;
             }
+        }
+
+        [RelayCommand]
+        private void Limpiar()
+        {
+            A = 0;
+            B = 0;
+            Result = 0;
         }
     }
 }
-
-
