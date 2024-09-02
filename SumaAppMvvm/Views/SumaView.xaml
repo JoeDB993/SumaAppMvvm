@@ -7,10 +7,10 @@
 
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Ingrese el valor de a" />
-        <Entry Text="{Binding A, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Valor de a" />
+        <Entry Text="{Binding A, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Valor de a" Focused="OnEntryFocused"  />
 
         <Label Text="Ingrese el valor de b" />
-        <Entry Text="{Binding B, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Valor de b" />
+        <Entry Text="{Binding B, Mode=TwoWay}" Keyboard="Numeric" Placeholder="Valor de b" Focused="OnEntryFocused"  />
 
         <Button Text="Calcular" Command="{Binding CalcularCommand}" />
         <Button Text="Limpiar" Command="{Binding LimpiarCommand}" />
